@@ -14,7 +14,7 @@ void vertex() {
 	NORMAL = (MODELVIEW_MATRIX * vec4(NORMAL, 0.0)).xyz;
 	
 	// Limit vertices precision on screen
-	vec2 resolution = vec2(160.0, 120.0);
+	vec2 resolution = vec2(320.0, 240.0) * 0.75;
 	float coord_w = (PROJECTION_MATRIX * vec4(VERTEX, 1.0)).w;
 	VERTEX.xy = coord_w * floor(resolution * VERTEX.xy / coord_w) / resolution;
 	
