@@ -4,9 +4,9 @@ export(PackedScene) var next_scene: PackedScene
 
 func _ready() -> void:
 	$AnimationPlayer.play("intro")
-	yield(get_tree().create_timer(8.0), "timeout")
+	yield(get_tree().create_timer(9.3), "timeout")
 	$AnimationPlayer.play("switch")
-	yield(get_tree().create_timer(8.0), "timeout")
+	yield(get_tree().create_timer(6.7), "timeout")
 	_goto_next_scene()
 
 func _goto_next_scene() -> void:

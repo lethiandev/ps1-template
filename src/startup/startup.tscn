@@ -7,8 +7,9 @@
 
 [sub_resource type="Animation" id=1]
 resource_name = "intro"
+length = 1.8
 tracks/0/type = "value"
-tracks/0/path = NodePath("Company:visible")
+tracks/0/path = NodePath("Playstation:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -17,33 +18,33 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ true ]
+"values": [ false ]
 }
-tracks/1/type = "value"
-tracks/1/path = NodePath("Playstation:visible")
+tracks/1/type = "method"
+tracks/1/path = NodePath("Company")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
-tracks/2/type = "method"
-tracks/2/path = NodePath("Company")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0 ),
+"times": PoolRealArray( 1.8 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
 "method": "show"
 } ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Company:color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1.2, 1.8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
 }
 
 [sub_resource type="Animation" id=2]
@@ -111,8 +112,10 @@ __meta__ = {
 }
 
 [node name="Company" parent="." instance=ExtResource( 2 )]
+color = Color( 0, 0, 0, 1 )
 
 [node name="Playstation" parent="." instance=ExtResource( 1 )]
+visible = false
 modulate = Color( 1, 1, 1, 0 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
