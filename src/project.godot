@@ -11,7 +11,7 @@ config_version=4
 [application]
 
 config/name="PS1 Template"
-run/main_scene="res://startup/startup.tscn"
+run/main_scene="res://stages/startup/startup.tscn"
 config/icon="res://icon.png"
 
 [display]
