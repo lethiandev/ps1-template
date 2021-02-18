@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://startup/playstation/playstation.tscn" type="PackedScene" id=1]
 [ext_resource path="res://startup/company/company.tscn" type="PackedScene" id=2]
 [ext_resource path="res://startup/startup.gd" type="Script" id=3]
+[ext_resource path="res://startup/startup.wav" type="AudioStream" id=4]
 
 [sub_resource type="Animation" id=1]
 resource_name = "intro"
@@ -113,6 +114,10 @@ __meta__ = {
 
 [node name="Playstation" parent="." instance=ExtResource( 1 )]
 modulate = Color( 1, 1, 1, 0 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+autoplay = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/intro = SubResource( 1 )
