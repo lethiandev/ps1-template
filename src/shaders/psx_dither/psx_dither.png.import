@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/psx_dither.png-0886488885b1ef427c820f87c0b2707a.stex"
+path="res://.import/psx_dither.png-bdeede08d063cf66a0670c41f35b9678.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://shaders/psx_dither.png"
-dest_files=[ "res://.import/psx_dither.png-0886488885b1ef427c820f87c0b2707a.stex" ]
+source_file="res://shaders/psx_dither/psx_dither.png"
+dest_files=[ "res://.import/psx_dither.png-bdeede08d063cf66a0670c41f35b9678.stex" ]
 
 [params]
 

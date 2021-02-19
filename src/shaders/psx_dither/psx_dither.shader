@@ -3,13 +3,13 @@
 shader_type canvas_item;
 render_mode unshaded, blend_disabled;
 
-uniform sampler2D screen_texture;
-uniform vec2 screen_size = vec2(320.0, 240.0);
+//uniform sampler2D screen_texture;
+//uniform vec2 screen_size = vec2(320.0, 240.0);
 uniform sampler2D pattern_texture;
 uniform vec2 pattern_size = vec2(36.0, 4.0);
 uniform float color_depth = 32.0;
 
-varying flat vec2 screen_texel;
+//varying flat vec2 screen_texel;
 
 float channel_error(float col, float col_min, float col_max) {
 	float range = abs(col_min - col_max);
@@ -51,15 +51,15 @@ vec4 yuv_to_rgb(vec4 yuva) {
 }
 
 void vertex() {
-	screen_texel = vec2(
-		1.0 / screen_size.x,
-		1.0 / screen_size.y
-	);
+	//screen_texel = vec2(
+	//	1.0 / screen_size.x,
+	//	1.0 / screen_size.y
+	//);
 }
 
 void fragment() {
 	// sample the texture and convert to YUV color space
-	vec4 col = texture(screen_texture, UV);
+	vec4 col = texture(SCREEN_TEXTURE, SCREEN_UV);
 	vec4 yuv = rgb_to_yuv(col);
 	
 	// Clamp the YUV color to specified color depth
@@ -72,6 +72,7 @@ void fragment() {
 	float dither_steps = pattern_size.x / dither_size;
 	
 	vec2 dither_uv = UV;
+	vec2 screen_texel = SCREEN_PIXEL_SIZE;
 	dither_uv.x = mod(dither_uv.x, dither_size * screen_texel.x);
 	dither_uv.x /= (dither_size * screen_texel.x);
 	dither_uv.y = mod(dither_uv.y, dither_size * screen_texel.y);
