@@ -1,0 +1,10 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=2]
+
+[ext_resource path="res://shaders/psx_dither/psx_dither.shader" type="Shader" id=1]
+[ext_resource path="res://shaders/psx_dither/psx_dither.png" type="Texture" id=2]
+
+[resource]
+shader = ExtResource( 1 )
+shader_param/pattern_size = Vector2( 36, 4 )
+shader_param/color_depth = 32.0
+shader_param/pattern_texture = ExtResource( 2 )
