@@ -7,7 +7,7 @@
 
 [sub_resource type="Animation" id=1]
 resource_name = "intro"
-length = 1.8
+length = 2.6
 tracks/0/type = "value"
 tracks/0/path = NodePath("Playstation:visible")
 tracks/0/interp = 1
@@ -27,7 +27,7 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 1.8 ),
+"times": PoolRealArray( 2.6 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
@@ -41,10 +41,24 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0, 1.2, 1.8 ),
+"times": PoolRealArray( 0, 1.7, 2.6 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/3/type = "method"
+tracks/3/path = NodePath("AudioStreamPlayer")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "play"
+} ]
 }
 
 [sub_resource type="Animation" id=2]
@@ -120,7 +134,6 @@ modulate = Color( 1, 1, 1, 0 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
-autoplay = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/intro = SubResource( 1 )
